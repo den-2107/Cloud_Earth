@@ -1,0 +1,11 @@
+.footer {
+    background-color: #dff9fb;
+    font-family: 'Fredoka', sans-serif;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 0 6px 0 gray;
+    text-shadow: 6px 3px 10px rgba(150, 150, 150, 1);
+    font-size: 25px;
+    padding: 5px;
+}
