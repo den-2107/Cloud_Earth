@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-// import dayjs from 'dayjs';
 import {
-  Divider,
   Box,
   Grid,
   Card,
@@ -12,16 +10,14 @@ import {
   CardActions,
   IconButton,
 } from "@mui/material";
+import Button from '@mui/material/Button';
 import FavoriteIcon from "@mui/icons-material/Favorite";
-// import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/material/styles";
 import moment from "moment";
-// import dayjs from "dayjs";
-// import "dayjs/locale/ru";
 import s from "./index.modules.css";
 import { Typography } from "@mui/material";
 
-const Card_one = ({
+const Card_info = ({
   title,
   text,
   author: { name, email, avatar },
@@ -40,9 +36,9 @@ const Card_one = ({
   const onClick = () => setOpened(!opened);
 
   return (
-  <Divider className={s.divider}>
+  <Grid className={s.box}>
     <Card className={s.card}>
-      <CardHeader className={s.color}
+      <CardHeader className={s.cardheader}
           avatar={<Avatar alt={name} src={avatar} variant="rounded" />}
           title={email}
           subheader={
@@ -54,7 +50,7 @@ const Card_one = ({
             </div>
           }
         />
-        <CardContent className={s.color}>
+        <CardContent className={s.cardcontent}>
           <Typography variant="h5">{title}</Typography>
           <Box sx={{ flexGrow: 1, overflow: "hidden", px: 2 }}>
             <Grid container wrap="nowrap" spacing={2}>
@@ -64,13 +60,15 @@ const Card_one = ({
             </Grid>
           </Box>
         </CardContent>
-        <CardActions disableSpacings className={s.color}>
+        <CardActions disableSpacings className={s.actions}>
           <IconButton>
             <FavoriteIcon />
           </IconButton>
-          {/* <ExpandMore opened={opened} onClick={onClick}> */}
-          {/* <ExpandMoreIcon /> */}
-          {/* </ExpandMore>  */}
+            <Button variant="outlined" size="small">
+              <p className={s.text}>
+                 Редактировать пост
+              </p>
+            </Button>
         </CardActions>
         <Collapse in={opened} className={s.color}>
           <CardContent>
@@ -78,8 +76,7 @@ const Card_one = ({
           </CardContent>
         </Collapse>
       </Card>
-      </Divider>
+      </Grid>
   );
 };
-
-export default Card_one;
+export default Card_info;

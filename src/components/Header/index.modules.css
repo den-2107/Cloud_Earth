@@ -1,10 +1,10 @@
 .header {
-    background-color: #dff9fb;
+    background-color: white;
     font-family: 'Fredoka', sans-serif;
     display: flex;
     justify-content: space-between;
     border-radius: 15px;
-    box-shadow: 0 0 10px 0 gray;
+    box-shadow: 0 0 6px 0 gray;
     text-shadow: 6px 3px 10px rgba(150, 150, 150, 1);
     font-size: 25px;
     padding: 5px;
@@ -35,7 +35,7 @@
     margin-right: 10px;
     margin-top: 10px;
     border-radius: 15px;
-    box-shadow: 0 0 10px 0 gray;
+    box-shadow: 0 0 6px 0 gray;
     text-shadow: 6px 3px 10px rgba(150, 150, 150, 1);
     border: none;   
     font-family: 'Fredoka', sans-serif;

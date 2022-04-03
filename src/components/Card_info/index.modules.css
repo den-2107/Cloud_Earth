@@ -1,0 +1,54 @@
+.card {
+    max-width: 400px;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    margin: 5px;
+    width: 470px;
+    height: 300px;
+  }
+
+.color {
+  background-color: white;
+  color: black;
+  text-shadow: 6px 3px 10px rgba(150, 150, 150, 1);
+}
+
+.cardheader {
+  display: inline-flex;
+  width: 350px;
+  height: 30px;
+}
+
+.cardcontent {
+  display: inline-flex;
+  flex-flow: column-reverse nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  width: 350px;
+  height: 90px;
+  background-color: white;
+  color: black;
+  text-shadow: 6px 3px 10px rgba(150, 150, 150, 1);
+}
+
+.email {
+  font-size: "150px";
+  text-shadow: 6px 3px 10px rgba(150, 150, 150, 1);
+  color: black;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.text {
+  size: 5px;
+  text-shadow: 6px 3px 10px rgba(150, 150, 150, 1);
+  color: black;
+}

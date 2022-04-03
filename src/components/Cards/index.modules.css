@@ -2,4 +2,7 @@
     margin: 30px !important;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;   
+    gap: 1rem;
   }
