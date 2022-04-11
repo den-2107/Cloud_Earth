@@ -84,3 +84,7 @@
   transition: 0.25s;
 }
 
+.isLiked {
+  color: red;
+}
+

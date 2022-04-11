@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Grid,
@@ -16,6 +16,7 @@ import { styled } from "@mui/material/styles";
 import moment from "moment";
 import s from "./index.modules.css";
 import { Typography } from "@mui/material";
+import  api  from "../../api";
 
 const Card_info = ({
   _id,
@@ -24,11 +25,33 @@ const Card_info = ({
   author: { name, email, avatar },
   created_at,
   updated_at,
+  likesCount,
+  isLiked,
 }) => {
   const [opened, setOpened] = useState(false);
-  // const deletePost = (e) => {
 
-  // };
+  const deletePost = (e) => {
+    api.deletePost(_id);
+  };
+
+  const [ currentLike, changeLike ] = useState(isLiked);
+  const [ currentLikesCount, changeLikesCount ] = useState(likesCount);
+
+  const setLike = (e) => {
+    let promise;
+
+    if (currentLike) {
+      promise = api.deleteLike(_id)
+    }
+    else {
+      promise = api.setLike(_id);
+    }
+
+    changeLike(!currentLike); 
+
+    promise.then((response) => changeLikesCount(response.likes.length));
+  };
+
   return (
   <Grid className={s.box}>
     <div className={s.card}>
@@ -58,10 +81,13 @@ const Card_info = ({
           </Box>
         </CardContent>
         <CardActions disableSpacings className={s.actions}> 
-          <IconButton>
-            <FavoriteIcon/>
+          <IconButton onClick={setLike}>
+            
+            <FavoriteIcon className={currentLike ? s.isLiked : null}/> 
+            {currentLikesCount}
           </IconButton>     
-            <button className={s.button}>  
+            <button className={s.button}
+            onClick={deletePost} >
                 Удалить пост
             </button>
             <button className={s.button}>  
