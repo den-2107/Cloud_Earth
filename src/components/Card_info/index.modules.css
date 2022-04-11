@@ -6,10 +6,14 @@
     margin: 5px;
     width: 470px;
     height: 300px;
+    overflow-wrap: break-word;
+    border-radius: 15px;
+    box-shadow: 0 0 6px 0 gray;
+    background-color: #ecf0f1;
   }
 
 .color {
-  background-color: white;
+  background-color: #ecf0f1;
   color: black;
   text-shadow: 6px 3px 10px rgba(150, 150, 150, 1);
 }
@@ -18,6 +22,7 @@
   display: inline-flex;
   width: 350px;
   height: 30px;
+  margin-bottom: 7px;
 }
 
 .cardcontent {
@@ -29,9 +34,10 @@
   align-self: center;
   width: 350px;
   height: 90px;
-  background-color: white;
+  background-color: #ecf0f1;
   color: black;
   text-shadow: 6px 3px 10px rgba(150, 150, 150, 1);
+  overflow-wrap: break-word;
 }
 
 .email {
@@ -52,3 +58,29 @@
   text-shadow: 6px 3px 10px rgba(150, 150, 150, 1);
   color: black;
 }
+
+.typography {
+  overflow-wrap: break-word;
+}
+
+.button {
+  background-color: #74b9ff;
+  width: 110px;
+  height: 50px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 6px 0 gray;
+  text-shadow: 6px 3px 10px rgba(150, 150, 150, 1);
+  border: none;   
+  font-family: 'Fredoka', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.button:hover {
+  background-color: #ecf0f1;
+  transition: 0.25s;
+}
+

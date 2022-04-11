@@ -18,6 +18,7 @@ import s from "./index.modules.css";
 import { Typography } from "@mui/material";
 
 const Card_info = ({
+  _id,
   title,
   text,
   author: { name, email, avatar },
@@ -25,21 +26,14 @@ const Card_info = ({
   updated_at,
 }) => {
   const [opened, setOpened] = useState(false);
+  // const deletePost = (e) => {
 
-  const ExpandMore = styled((props) => {
-    const { opened, ...other } = props;
-    return <IconButton {...other} />;
-  })(({ opened }) => ({
-    transform: opened ? "rotate(180deg)" : "rotate(0deg)",
-  }));
-
-  const onClick = () => setOpened(!opened);
-
+  // };
   return (
   <Grid className={s.box}>
-    <Card className={s.card}>
-      <CardHeader className={s.cardheader}
-          avatar={<Avatar alt={name} src={avatar} variant="rounded" />}
+    <div className={s.card}>
+      <CardHeader className={s.cardheader}   
+          avatar={<Avatar alt={name} src={avatar} />}
           title={email}
           subheader={
             <div style={{ diplay: "flex", flexDirection: "column", fontSize: "15px", textShadow: "6px 3px 10px rgba(150, 150, 150, 1)"}}>
@@ -51,31 +45,35 @@ const Card_info = ({
           }
         />
         <CardContent className={s.cardcontent}>
-          <Typography variant="h5">{title}</Typography>
-          <Box sx={{ flexGrow: 1, overflow: "hidden", px: 2 }}>
-            <Grid container wrap="nowrap" spacing={2}>
+        <Grid container wrap="wrap" spacing={1}>
               <Grid item xs zeroMinWidth>
-                <Typography noWrap>{text}</Typography>
+                <Typography  Wrap>{text}</Typography>
+                <p>
+                  id - {_id}
+                </p>
               </Grid>
             </Grid>
+          <Typography variant="h5">{title}</Typography>
+          <Box sx={{ flexGrow: 1, overflow: "hidden", px: 2 }}>
           </Box>
         </CardContent>
-        <CardActions disableSpacings className={s.actions}>
+        <CardActions disableSpacings className={s.actions}> 
           <IconButton>
-            <FavoriteIcon />
-          </IconButton>
-            <Button variant="outlined" size="small">
-              <p className={s.text}>
-                 Редактировать пост
-              </p>
-            </Button>
+            <FavoriteIcon/>
+          </IconButton>     
+            <button className={s.button}>  
+                Удалить пост
+            </button>
+            <button className={s.button}>  
+                Редактировать пост
+            </button>
         </CardActions>
         <Collapse in={opened} className={s.color}>
           <CardContent>
             <Typography>{text}</Typography>
           </CardContent>
         </Collapse>
-      </Card>
+      </div>
       </Grid>
   );
 };

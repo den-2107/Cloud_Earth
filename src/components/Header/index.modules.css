@@ -1,5 +1,5 @@
 .header {
-    background-color: white;
+    background-color: #ecf0f1;
     font-family: 'Fredoka', sans-serif;
     display: flex;
     justify-content: space-between;
@@ -44,6 +44,6 @@
 }
 
 .add_button:hover {
-    background-color: white;
+    background-color: #ecf0f1;
     transition: 0.25s;
 }
