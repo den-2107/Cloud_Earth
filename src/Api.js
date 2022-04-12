@@ -1,3 +1,5 @@
+import addPost from "./components/Form";
+
 const config = {
     token:
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjJiNmZmYzA5YjEyZjgwZjRjMTBiY2EiLCJpYXQiOjE2NDcwMTM4ODcsImV4cCI6MTY3ODU0OTg4N30.bwYwcvR85l77PNcqdYkT05VRFpTDbtBsfDqJtfLzGYY",
@@ -60,6 +62,29 @@ class Api {
             },
         }).then(onResponce);
     }
+
+    addPost(title, text, image, tags) {
+        return fetch(`${this.baseUrl}/posts`, {
+            method: "POST",
+            headers: {
+                authorization: this.token,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({title, text, image, tags})
+        }).then(onResponce);
+    }
+
+    updatePost(id, title, text, image, tags) {
+        return fetch(`${this.baseUrl}/posts/${id}`, {
+            method: "PATCH",
+            headers: {
+                authorization: this.token,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({title, text, image, tags})
+        }).then(onResponce);
+    }
+
 };
 
 const api = new Api(config);

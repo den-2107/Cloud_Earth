@@ -3,7 +3,24 @@ import logo from "./img/logo-header.png";
 
 import s from "./index.modules.css";
 const buttonClick = event => alert(event.target.id);
-const Header = () => {
+const Header = ({
+  setFormParams,
+  changeFormTitle,
+  changeFormText
+}) => {
+  let formParams = {
+    isVisible: true,
+    method: "POST",
+    initParams: {
+      id: null,
+      title: "",
+      text: "",
+      image: "",
+      tags: []
+    }
+  }
+
+  const showAddPostForm = (e) => setFormParams(formParams);
 
   return (
     <header className={s.header}>
@@ -13,7 +30,7 @@ const Header = () => {
       </div>
         <div>
           <button className={s.add_button}
-          onClick={buttonClick}
+          onClick={showAddPostForm}
           >Добавить пост</button>
         </div>
     </header>

@@ -27,12 +27,32 @@ const Card_info = ({
   updated_at,
   likesCount,
   isLiked,
+  setFormParams,
+  changeFormTitle,
+  changeFormText
 }) => {
   const [opened, setOpened] = useState(false);
 
   const deletePost = (e) => {
     api.deletePost(_id);
   };
+
+  const updateClick = () => {
+    setFormParams({
+      isVisible: true,
+      method: "PATCH",
+      initParams: {
+        id: _id,
+        title: title,
+        text: text,
+        image: "",
+        tags: []
+      }
+    })
+
+    changeFormTitle(title)
+    changeFormText(text)
+  }
 
   const [ currentLike, changeLike ] = useState(isLiked);
   const [ currentLikesCount, changeLikesCount ] = useState(likesCount);
@@ -90,7 +110,7 @@ const Card_info = ({
             onClick={deletePost} >
                 Удалить пост
             </button>
-            <button className={s.button}>  
+            <button className={s.button} onClick={updateClick}>  
                 Редактировать пост
             </button>
         </CardActions>
