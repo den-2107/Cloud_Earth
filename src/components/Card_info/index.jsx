@@ -1,23 +1,17 @@
 import React, { useState, useEffect } from "react";
 import {
-  Box,
   Grid,
-  Card,
   CardHeader,
-  Collapse,
   Avatar,
   CardContent,
   CardActions,
   IconButton,
 } from "@mui/material";
-import Button from '@mui/material/Button';
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { styled } from "@mui/material/styles";
 import moment from "moment";
 import s from "./index.modules.css";
 import { Typography } from "@mui/material";
 import  api  from "../../api";
-import { margin } from "@mui/system";
 
 const Card_info = ({
   _id,
@@ -82,7 +76,7 @@ const Card_info = ({
           avatar={<Avatar alt={name} src={avatar} />}
           title={email}
           subheader={
-            <div style={{ diplay: "flex", flexDirection: "column", fontSize: "15px", textShadow: "6px 3px 10px rgba(150, 150, 150, 1)"}}>
+            <div style={{diplay: "flex", flexDirection: "column", fontSize: "15px", textShadow: "6px 3px 10px rgba(150, 150, 150, 1)"}}>
               <div>
                 {moment(created_at).locale("ru").format("LL")}
               </div>
@@ -94,6 +88,7 @@ const Card_info = ({
           variant="h5" 
           align="center"
           px={2}
+          fontWeight="bold"
         >
           {title}
         </Typography>
@@ -104,8 +99,6 @@ const Card_info = ({
             alignItems="center"
             justifyContent="center"
           >
-            {/* <Grid item xs zeroMinWidth> */}
-              
               <Typography 
                 sx={{
                     overflow: "scroll", 
@@ -120,7 +113,6 @@ const Card_info = ({
                   {text}
               </Typography>
               <Typography>id - {_id}</Typography>
-            {/* </Grid> */}
           </Grid>
         </CardContent>
         <CardActions disableSpacings className={s.actions}> 
@@ -138,7 +130,6 @@ const Card_info = ({
               Редактировать пост
           </button>
         </CardActions>
- 
       </div>
       </Grid>
   );

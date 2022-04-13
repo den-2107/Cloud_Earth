@@ -23,7 +23,9 @@
     background-color: white;
     gap: 10px;
     padding: 15px;
-    
+    font-family: 'Fredoka', sans-serif;
+    font-size: 15px;
+    text-shadow: 6px 3px 10px rgba(150, 150, 150, 1);
 }
 
 .button {
@@ -58,7 +60,6 @@
 
 p {
     margin: 0;
-
 }
 
 input {
@@ -69,7 +70,6 @@ input {
     height: 35px;
     box-shadow: 0 0 6px 0 gray;
     border: 1px solid #ecf0f1;
-
 }
 
 input:focus{
