@@ -12,7 +12,7 @@ const Form = ({
 }) => {
 
     console.log("Form")
-    const visibility = params.isVisible ? "visible" : "hidden";
+    const display = params.isVisible ? "flex" : "none";
 
     const addClick = () => {
         
@@ -43,25 +43,26 @@ const Form = ({
     }
 
     return (
-        <div style={{visibility: visibility}}>
-            <input id="title" value={title} onChange={(e) => changeTitle(e.target.value)}>
-                
-            </input>
-            <input id="text" value={text} onChange={(e) => changeText(e.target.value)}>
-                
-            </input>
-            <input id="image" value="https://mnogo-krolikov.ru/wp-content/uploads/2019/06/https-murkoshka-ru-wp-content-uploads-1467565784.jpeg">
-                
-            </input>
-            <input id="tag">
-                
-            </input>
-            <button onClick={addClick}>
-                {params.method === "POST" ? "add" : "update"}
-            </button>
-            <button onClick={closeClick}>
-                close
-            </button>
+        <div className="popup" style={{display: display}}>
+            <div className="form">
+                <p>Введите заголовок</p>
+                <input id="title" value={title} onChange={(e) => changeTitle(e.target.value)}/>
+                <p>Введите текст</p>
+                <input id="text" value={text} onChange={(e) => changeText(e.target.value)}/>
+                <p>Вставьте ссылку на картинку</p>
+                <input id="image" />
+                <p>Укажите теги </p>
+                <input id="tag"/>
+                <div className="buttonActiv">
+                    <button className="button" onClick={addClick}>
+                        {params.method === "POST" ? "Добавить пост" : "Обновить пост"}
+                    </button>
+                    <button className="button" onClick={closeClick}>
+                        Отмена
+                    </button>
+                </div>
+            </div>
+
         </div>
     );
 }
