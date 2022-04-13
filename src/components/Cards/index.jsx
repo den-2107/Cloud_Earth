@@ -9,12 +9,13 @@ const Cards = ({
    data, 
    setFormParams,
    changeFormTitle,
-   changeFormText
+   changeFormText,
+   setPost
 }) => {
+  console.log("Cards")
+
   const [me, getMe ] = useState([ ]);
   useEffect(()=> api.getMe().then(data => getMe(data)._id), []);
-  console.log(data[0])
-  console.log(me)
 
   return (
     <div className={s.cards}>
@@ -27,6 +28,7 @@ const Cards = ({
             setFormParams={setFormParams}
             changeFormTitle={changeFormTitle}
             changeFormText={changeFormText}
+            setPost={setPost}
           />
         )
       }

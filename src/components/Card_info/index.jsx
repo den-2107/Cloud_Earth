@@ -17,6 +17,7 @@ import moment from "moment";
 import s from "./index.modules.css";
 import { Typography } from "@mui/material";
 import  api  from "../../api";
+import { margin } from "@mui/system";
 
 const Card_info = ({
   _id,
@@ -29,12 +30,14 @@ const Card_info = ({
   isLiked,
   setFormParams,
   changeFormTitle,
-  changeFormText
+  changeFormText,
+  setPosts
 }) => {
-  const [opened, setOpened] = useState(false);
+  console.log("Card_info")
 
   const deletePost = (e) => {
     api.deletePost(_id);
+    useEffect(() => api.getAllpost().then(data => setPosts(data)), [])
   };
 
   const updateClick = () => {
@@ -87,38 +90,55 @@ const Card_info = ({
             </div>
           }
         />
-        <CardContent className={s.cardcontent}>
-        <Grid container wrap="wrap" spacing={1}>
-              <Grid item xs zeroMinWidth>
-                <Typography  Wrap>{text}</Typography>
-                <p>
-                  id - {_id}
-                </p>
-              </Grid>
-            </Grid>
-          <Typography variant="h5">{title}</Typography>
-          <Box sx={{ flexGrow: 1, overflow: "hidden", px: 2 }}>
-          </Box>
+        <Typography 
+          variant="h5" 
+          align="center"
+          px={2}
+        >
+          {title}
+        </Typography>
+        <CardContent sx={{padding: "0"}}>
+          <Grid 
+            container 
+            direction="column"
+            alignItems="center"
+            justifyContent="center"
+          >
+            {/* <Grid item xs zeroMinWidth> */}
+              
+              <Typography 
+                sx={{
+                    overflow: "scroll", 
+                    height: "100px", 
+                    width: "calc(100% - 32px)", 
+                    wrap: "wrap",
+                    overflowX: "hidden",
+                    overflowY: "auto"
+                  }} 
+                px={2}
+              >
+                  {text}
+              </Typography>
+              <Typography>id - {_id}</Typography>
+            {/* </Grid> */}
+          </Grid>
         </CardContent>
         <CardActions disableSpacings className={s.actions}> 
-          <IconButton onClick={setLike}>
-            
+          <IconButton onClick={setLike}>            
             <FavoriteIcon className={currentLike ? s.isLiked : null}/> 
             {currentLikesCount}
           </IconButton>     
-            <button className={s.button}
-            onClick={deletePost} >
-                Удалить пост
-            </button>
-            <button className={s.button} onClick={updateClick}>  
-                Редактировать пост
-            </button>
+          <button 
+            className={s.button}
+            onClick={deletePost}
+          >
+              Удалить пост
+          </button>
+          <button className={s.button} onClick={updateClick}>  
+              Редактировать пост
+          </button>
         </CardActions>
-        <Collapse in={opened} className={s.color}>
-          <CardContent>
-            <Typography>{text}</Typography>
-          </CardContent>
-        </Collapse>
+ 
       </div>
       </Grid>
   );

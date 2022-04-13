@@ -24,6 +24,8 @@ import Form from "./components/Form"
 import api from "./api"
 
 const App = () => {
+  console.log("App")
+  
 // api.getAllpost().then(data => setPosts(data))
 const [posts, setPosts ] = useState([ ]);
 useEffect( ()=> api.getAllpost().then(data => setPosts(data)), [ ])
@@ -46,7 +48,7 @@ useEffect( ()=> api.getAllpost().then(data => setPosts(data)), [ ])
   return (
     <>
       <Header setFormParams={setFormParams} />
-      <Form 
+      <Form
         params={formParams} 
         setFormParams={setFormParams}
         title={formTitle}
@@ -54,11 +56,12 @@ useEffect( ()=> api.getAllpost().then(data => setPosts(data)), [ ])
         text={formText}
         changeText={changeFormText}
       />
-      <Cards 
+      <Cards
         data={posts} 
         setFormParams={setFormParams}
         changeFormTitle={changeFormTitle}
         changeFormText={changeFormText}
+        setPost={setPosts}
       />
       <Footer />
     </>

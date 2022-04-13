@@ -3,13 +3,13 @@
     display: inline-flex;
     flex-flow: column nowrap;
     justify-content: space-around;
-    margin: 5px;
     width: 470px;
-    height: 300px;
     overflow-wrap: break-word;
     border-radius: 15px;
     box-shadow: 0 0 6px 0 gray;
     background-color: #ecf0f1;
+    height: 100%;
+    gap: 10px;
   }
 
 .color {
@@ -37,7 +37,7 @@
   background-color: #ecf0f1;
   color: black;
   text-shadow: 6px 3px 10px rgba(150, 150, 150, 1);
-  overflow-wrap: break-word;
+  /* overflow-wrap: break-word; */
 }
 
 .email {
@@ -51,6 +51,7 @@
   justify-content: space-between;
   align-items: center;
   align-content: center;
+  padding: 0 !important;
 }
 
 .text {
@@ -64,7 +65,7 @@
 }
 
 .button {
-  background-color: #74b9ff;
+  background-color: #ecf0f1;
   width: 110px;
   height: 50px;
   margin-right: 10px;
@@ -80,11 +81,10 @@
 }
 
 .button:hover {
-  background-color: #ecf0f1;
+  background-color: #74b9ff;
   transition: 0.25s;
 }
 
 .isLiked {
   color: red;
 }
-

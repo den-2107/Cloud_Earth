@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import api from "../../api";
 import s from "./index.css";
 
-const addPost = ({
+const Form = ({
     params,
     setFormParams,
     title,
@@ -10,17 +10,20 @@ const addPost = ({
     text,
     changeText
 }) => {
+
+    console.log("Form")
     const visibility = params.isVisible ? "visible" : "hidden";
 
     const addClick = () => {
+        
         const title = document.getElementById("title").value;
         const text = document.getElementById("text").value;
         const image = document.getElementById("image").value;
         const tag = document.getElementById("tag").value;
         
         switch (params.method) {
-            case "POST": api.addPost(title, text, image, [tag])
-            case "PATCH": api.updatePost(params.initParams.id, title, text, image, [tag])
+            case "POST": api.addPost(title, text, image, [tag]); break;
+            case "PATCH": api.updatePost(params.initParams.id, title, text, image, [tag]); break;
             default: console.error("Not supported method!");
         }
     };
@@ -63,4 +66,4 @@ const addPost = ({
     );
 }
 
-export default addPost;
+export default Form;
