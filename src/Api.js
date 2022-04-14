@@ -21,18 +21,17 @@ class Api {
             headers: {
                 authorization: this.token,
             },
-        });
+        }).then(onResponce);
     }
 
     deletePost(_id) {
         return fetch(`${this.baseUrl}/posts/${_id}`, {
-            // return fetch ("https://api.react-learning.ru/posts/:" + _id, {
                 method: "DELETE",
                 headers: {
                     authorization: this.token,
                 },
             }
-        ).then(onResponce);
+        );
     }    
     
     setLike(id) {
@@ -60,7 +59,7 @@ class Api {
             headers: {
                 authorization: this.token,
             },
-        }).then(onResponce);
+        });
     }
 
     addPost(title, text, image, tags) {
