@@ -1,6 +1,5 @@
 import React , { useState, useEffect } from "react";
 import Card_info from "../Card_info";
-//import { Grid } from "@mui/material";
 
 import s from "./index.modules.css";
 import api from "../../api";
@@ -10,7 +9,7 @@ const Cards = ({
    setFormParams,
    changeFormTitle,
    changeFormText,
-   setPost
+   setPosts
 }) => {
   console.log("Cards")
 
@@ -28,7 +27,7 @@ const Cards = ({
             setFormParams={setFormParams}
             changeFormTitle={changeFormTitle}
             changeFormText={changeFormText}
-            setPost={setPost}
+            setPosts={setPosts}
           />
         )
       }

@@ -21,7 +21,7 @@ class Api {
             headers: {
                 authorization: this.token,
             },
-        }).then(onResponce);
+        });
     }
 
     deletePost(_id) {
@@ -71,7 +71,7 @@ class Api {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({title, text, image, tags})
-        }).then(onResponce);
+        });
     }
 
     updatePost(id, title, text, image, tags) {
@@ -82,7 +82,7 @@ class Api {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({title, text, image, tags})
-        }).then(onResponce);
+        });
     }
 
 };

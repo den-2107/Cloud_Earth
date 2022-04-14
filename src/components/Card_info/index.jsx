@@ -31,7 +31,7 @@ const Card_info = ({
 
   const deletePost = (e) => {
     api.deletePost(_id);
-    useEffect(() => api.getAllpost().then(data => setPosts(data)), [])
+    api.getAllpost().then(data => setPosts(data))
   };
 
   const updateClick = () => {
@@ -45,7 +45,7 @@ const Card_info = ({
         image: "",
         tags: []
       }
-    })
+    });
 
     changeFormTitle(title)
     changeFormText(text)

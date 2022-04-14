@@ -8,7 +8,8 @@ const Form = ({
     title,
     changeTitle,
     text,
-    changeText
+    changeText,
+    setPosts
 }) => {
 
     console.log("Form")
@@ -22,10 +23,28 @@ const Form = ({
         const tag = document.getElementById("tag").value;
         
         switch (params.method) {
-            case "POST": api.addPost(title, text, image, [tag]); break;
-            case "PATCH": api.updatePost(params.initParams.id, title, text, image, [tag]); break;
+            case "POST": 
+                api.addPost(title, text, image, [tag]);
+                api.getAllpost().then(data => setPosts(data));
+                break;
+            case "PATCH": 
+                api.updatePost(params.initParams.id, title, text, image, [tag]);
+                api.getAllpost().then(data => setPosts(data));
+                break;
             default: console.error("Not supported method!");
         }
+
+        setFormParams({
+            isVisible: false,
+            method: "POST",
+            initParams: {
+                id: null,
+                title: "",
+                text: "",
+                image: "",
+                tags: []
+            }
+          });
     };
 
     const closeClick = () => {
@@ -39,7 +58,7 @@ const Form = ({
                 image: "",
                 tags: []
             }
-          })
+          });
     }
 
     return (

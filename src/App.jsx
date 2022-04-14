@@ -4,29 +4,11 @@ import Cards from "./components/Cards";
 import Footer from "./components/Footer"
 import Form from "./components/Form"
 
-// import { postData } from "/posts.js";
-
-// const App = () => {
-//   return (
-//     <>
-//       <Header />
-//       <Cards data={postData} />
-//       <Footer />
-//     </>
-//   );
-// };
-
-// export default App;
-
-
-
-
 import api from "./api"
 
 const App = () => {
   console.log("App")
   
-// api.getAllpost().then(data => setPosts(data))
 const [posts, setPosts ] = useState([ ]);
 useEffect( ()=> api.getAllpost().then(data => setPosts(data)), [ ])
 
@@ -55,13 +37,14 @@ useEffect( ()=> api.getAllpost().then(data => setPosts(data)), [ ])
         changeTitle={changeFormTitle}
         text={formText}
         changeText={changeFormText}
+        setPosts={setPosts}
       />
       <Cards
         data={posts} 
         setFormParams={setFormParams}
         changeFormTitle={changeFormTitle}
         changeFormText={changeFormText}
-        setPost={setPosts}
+        setPosts={setPosts}
       />
       <Footer />
     </>
