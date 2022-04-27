@@ -2,5 +2,5 @@
 
 **Cloud_Earth** - a web application that allows users to create small posts in which they can express their thoughts, emotions, advice or just ideas.
 
-# Screenshots
+## Screenshots
 ![img_1](https://i.postimg.cc/t48Q1j1s/2022-04-16-8.png)
