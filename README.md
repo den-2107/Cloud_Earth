@@ -25,9 +25,9 @@
 
 ## Used libraries
 
--  React.js (https://ru.reactjs.org/)
--  Moment.js (https://momentjs.com/)
--  Material UI (https://mui.com/)
+-  React.js
+-  Moment.js
+-  Material UI
 
 ## To start a project:
 
