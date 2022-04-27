@@ -13,6 +13,8 @@
 
 ## To start a project:
 
-<npm i yarn >
-<yarn install >
-<yarn start >
+```
+npm i yarn
+yarn install
+yarn start
+```
