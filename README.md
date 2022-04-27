@@ -11,23 +11,23 @@
 ![img_3](https://imagizer.imageshack.com/img924/4114/mGeocZ.png)
 
 ## Realized functional
-- ul Receiving and displaying data from the server
-- ul Adding and updating a post
-- ul Setting and deleting likes
+-  Receiving and displaying data from the server
+-  Adding and updating a post
+-  Setting and deleting likes
 
 ## Next steps
-- ul Fixing errors in the application and improving performance
-- ul Sorting posts by selected category
-- ul Authorization Window
-- ul Routing by pages
-- ul Improving the user interface
-- ul Adding React Skeleton/Spinner
+-  Fixing errors in the application and improving performance
+-  Sorting posts by selected category
+-  Authorization Window
+-  Routing by pages
+-  Improving the user interface
+-  Adding React Skeleton/Spinner
 
 ## Used libraries
 
-- ul React.js:https://ru.reactjs.org/
-- ul Moment.js:https://momentjs.com/
-- ul Material UI:https://mui.com/
+-  React.js (https://ru.reactjs.org/)
+-  Moment.js (https://momentjs.com/)
+-  Material UI (https://mui.com/)
 
 ## To start a project:
 
