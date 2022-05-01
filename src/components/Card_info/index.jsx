@@ -112,7 +112,7 @@ const Card_info = ({
               >
                   {text}
               </Typography>
-              <Typography>id - {_id}</Typography>
+              {/* <Typography>id - {_id}</Typography> */}
           </Grid>
         </CardContent>
         <CardActions disableSpacings className={s.actions}> 
